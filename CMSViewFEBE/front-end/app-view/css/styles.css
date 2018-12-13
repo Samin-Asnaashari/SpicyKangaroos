@@ -1,0 +1,8 @@
+html, body {
+    font-family: 'Source Sans Pro', "Arial Black", serif;
+}
+
+/* remove default background */
+html.md-default-theme, html, body.md-default-theme, body {
+    background-color: transparent;
+}

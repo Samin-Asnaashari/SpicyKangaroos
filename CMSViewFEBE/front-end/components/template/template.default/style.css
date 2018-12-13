@@ -1,0 +1,48 @@
+.template-default .thumbnail {
+    padding-top: 20px;
+    width: 300px;
+    height: 290px;
+    overflow: hidden;
+    border: none;
+}
+
+.template-default .thumbnail .caption {
+    padding-top: 30px;
+}
+
+.template-default .thumbnail .image_box {
+    width: 280px;
+    height: 150px;
+    overflow: hidden;
+    border: none;
+    position: relative;
+}
+
+.template-default .thumbnail .image_box .thumbnail-image__box {
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.template-default .thumbnail .image_box .zoom-in {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+.template-default {
+    background-color: #000000;
+    padding-top: 20px;
+}
+
+.template-default .close-button-wrapper {
+    z-index: 3;
+}
+
+.template-default .x-button {
+    color: #fff;
+    outline: none;
+}

@@ -1,0 +1,30 @@
+<div class="trash-menuItem">
+    <div ng-repeat="trashItem in trashMenuItems" class="trash-top-menu-item">
+        <div class="row">
+            <div class="col-xs-12 well well-sm trash-menu">
+                <div class="col-xs-10">
+                    <div>
+                        {{trashItem.name}}
+                        <small><sup>Draft</sup></small>
+                    </div>
+                </div>
+                <div class="col-xs-2 trash-menu-container">
+                    <trash-menu menu-item="trashItem"></trash-menu>
+                </div>
+            </div>
+            <div class="col-xs-12 trash-nested-container">
+                <div ng-repeat="trashChild in trashItem.children" class="trash-menu-child row">
+                    <div class="row well well-sm trash-sub-menu">
+                        <div class="col-xs-10">
+                            {{trashChild.name}}
+                            <small><sup>Draft</sup></small>
+                        </div>
+                        <div class="col-xs-2 trash-menu-container">
+                            <trash-menu menu-item="trashChild"></trash-menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

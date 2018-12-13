@@ -1,0 +1,63 @@
+<div class="row template-default" align="center">
+
+    <!-- top-right button close -->
+    <div class="col-xs-12 close-button-wrapper">
+        <div class="pull-right" ng-if="vmTemplateDefault.getFirst()">
+            <i class="fa fa-times fa-2x x-button" aria-hidden="true"
+            ng-click="vmTemplateDefault.closeTemplate()"></i>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail">
+            <h4>Template Nr 01</h4>
+            <div class="image_box"
+                 ng-mouseover="vmTemplateDefault.hoverZoom1 = true"
+                 ng-mouseleave="vmTemplateDefault.hoverZoom1 = false">
+                <i class="fa fa-search-plus fa-2x zoom-in" aria-hidden="true"
+                   ng-show="vmTemplateDefault.hoverZoom1"
+                   ng-click="vmTemplateDefault.openImage(vmTemplateDefault.image1)"></i>
+                <img ng-src="{{vmTemplateDefault.image1}}" class="thumbnail-image__box img-thumbnail">
+            </div>
+            <div class="caption">
+                <md-button class="md-raised btn-block" ng-click="vmTemplateDefault.addTemplate1()">Select template
+                </md-button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail">
+            <h4>Template Nr 02</h4>
+            <div class="image_box"
+                 ng-mouseover="vmTemplateDefault.hoverZoom2 = true"
+                 ng-mouseleave="vmTemplateDefault.hoverZoom2 = false">
+                <i class="fa fa-search-plus fa-2x zoom-in" aria-hidden="true"
+                   ng-show="vmTemplateDefault.hoverZoom2"
+                   ng-click="vmTemplateDefault.openImage(vmTemplateDefault.image2)"></i>
+                <img ng-src="{{vmTemplateDefault.image2}}" class="thumbnail-image__box img-thumbnail">
+            </div>
+            <div class="caption">
+                <md-button class="md-raised btn-block" ng-click="vmTemplateDefault.addTemplate2()">Select template
+                </md-button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail">
+            <h4>Template Nr 03</h4>
+            <div class="image_box"
+                 ng-mouseover="vmTemplateDefault.hoverZoom3 = true"
+                 ng-mouseleave="vmTemplateDefault.hoverZoom3 = false">
+                <i class="fa fa-search-plus fa-2x zoom-in" aria-hidden="true"
+                   ng-show="vmTemplateDefault.hoverZoom3"
+                   ng-click="vmTemplateDefault.openImage(vmTemplateDefault.image3)"></i>
+                <img ng-src="{{vmTemplateDefault.image3}}" class="thumbnail-image__box img-thumbnail">
+            </div>
+            <div class="caption">
+                <md-button class="md-raised btn-block" ng-click="vmTemplateDefault.addTemplate3()">Select template
+                </md-button>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>

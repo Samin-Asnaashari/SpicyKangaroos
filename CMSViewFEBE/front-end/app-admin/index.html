@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html ng-app="appAdmin">
+<head lang="en">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CMS - GameHouse</title>
+    <link rel="shortcut icon" href="#"/>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <!-- dependencies styles -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bower_components/angular-ui-notification/dist/angular-ui-notification.css">
+    <link rel="stylesheet" href="../bower_components/angular-xeditable/dist/css/xeditable.min.css">
+    <link rel="stylesheet" href="../bower_components/dragular/dist/dragular.css">
+
+    <!--component style-->
+    <!-- dashboard -->
+    <link rel="stylesheet" href="../components/dashboard/dashboard.styles.css">
+    <!-- page -->
+    <link rel="stylesheet" href="../components/page/page.styles.css">
+    <!-- default template -->
+    <link rel="stylesheet" href="../components/template/template.default/style.css">
+    <!-- templates -->
+    <link rel="stylesheet" href="../components/template/template1/styles.css">
+    <link rel="stylesheet" href="../components/template/template2/styles.css">
+    <link rel="stylesheet" href="../components/template/template3/styles.css">
+    <link rel="stylesheet" href="../components/template/templates.styles.css">
+    <!-- add-section button -->
+    <link rel="stylesheet" href="../components/add.template.button/add.template.styles.css">
+    <!-- text editor -->
+    <link rel="stylesheet" href="../components/text.editor/editor.styles.css">
+    <!-- color picker -->
+    <link rel="stylesheet" href="../bower_components/angular-color-picker/dist/angularjs-color-picker.min.css"/>
+    <!-- style dialog -->
+    <link rel="stylesheet" href="../components/style.menu/styles.css"/>
+
+    <!-- general styles -->
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- TODO: Change navigation and footer to be in ui-views -->
+<dashboard-nav></dashboard-nav>
+<div ui-view></div>
+
+<!-- dependencies scripts -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
+<script src="../bower_components/tinycolor/dist/tinycolor-min.js"></script>
+<script src="../bower_components/angular-color-picker/dist/angularjs-color-picker.min.js"></script>
+<script src="../bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+<script src="../bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+<script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="../bower_components/dragular/dist/dragular.js"></script>
+
+<!-- application -->
+<script src="../components/config/app.module.js"></script>
+<script src="../components/add.template.button/module.js"></script>
+<script src="../components/dashboard/module.js"></script>
+<script src="../components/navigation/admin/module.js"></script>
+<script src="../components/navigation/view/module.js"></script>
+<script src="../components/page/edit/module.js"></script>
+<script src="../components/page/view/module.js"></script>
+<script src="../components/section.menu/module.js"></script>
+<script src="../components/style.menu/config/module.js"></script>
+<script src="../components/template/config/module.edit.js"></script>
+<script src="../components/template/config/module.view.js"></script>
+<script src="../components/text.editor/config/module.js"></script>
+
+<script src="../services/api/config/module.js"></script>
+<script src="../services/event/config/module.js"></script>
+
+<script src="config/app.module.js"></script>
+<script src="config/app.routes.js"></script>
+<script src="../components/config/app.run.js"></script>
+
+<!-- components -->
+
+<!-- dashboard -->
+<script src="../components/dashboard/dashboard.controller.js"></script>
+<script src="../components/dashboard/menuItem.collection/menuItem.collection.directive.js"></script>
+<script src="../components/dashboard/menuItem.collection/menuItem.collection.controller.js"></script>
+<script src="../components/dashboard/menuItem.menu/menuItem.menu.controller.js"></script>
+<script src="../components/dashboard/menuItem.menu/menuItem.menu.directive.js"></script>
+<!--trash-->
+<script src="../components/dashboard/trash.collection/trash.collection.directive.js"></script>
+<script src="../components/dashboard/trash.menuItem.menu/trash.menu.controller.js"></script>
+<script src="../components/dashboard/trash.menuItem.menu/trash.menu.directive.js"></script>
+<!-- create page -->
+<script src="../components/dashboard/create.page/create.page.controller.js"></script>
+<script src="../components/dashboard/create.page/create.page.directive.js"></script>
+
+<!-- TODO: Check the above change about navigation and footer in ui-views -->
+<!-- navigation -->
+<script src="../components/navigation/admin/dashboard-navigation.directive.js"></script>
+<!-- footer -->
+<script src="../components/footer/admin/dashboard-footer.directive.js"></script>
+
+<!-- page edit -->
+<script src="../components/page/edit/page.edit.controller.js"></script>
+<script src="../components/add.template.button/add.template.directive.js"></script>
+
+<!-- section-menu -->
+<script src="../components/section.menu/section.menu.controller.js"></script>
+<script src="../components/section.menu/section.menu.directive.js"></script>
+
+<!-- style-menu -->
+<script src="../components/style.menu/style.controller.js"></script>
+<script src="../components/style.menu/style.directive.js"></script>
+
+<!-- text editor -->
+<script src="../components/text.editor/editor.controller.js"></script>
+<script src="../components/text.editor/editor.directive.js"></script>
+
+<!-- default template -->
+<script src="../components/template/template.default/template.default.controller.js"></script>
+<script src="../components/template/template.default/template.default.directive.js"></script>
+
+<!-- templates edit -->
+<script src="../components/template/template1/edit/template1.edit.controller.js"></script>
+<script src="../components/template/template1/edit/template1.edit.directive.js"></script>
+<script src="../components/template/template2/edit/template2.edit.controller.js"></script>
+<script src="../components/template/template2/edit/template2.edit.directive.js"></script>
+<script src="../components/template/template3/edit/template3.edit.controller.js"></script>
+<script src="../components/template/template3/edit/template3.edit.directive.js"></script>
+
+<!-- templates view -->
+<script src="../components/template/template1/view/template1.view.directive.js"></script>
+<script src="../components/template/template2/view/template2.view.directive.js"></script>
+<script src="../components/template/template3/view/template3.view.directive.js"></script>
+
+<!-- templates build service -->
+<script src="../components/template/template.service.js"></script>
+
+<!-- dependencies config -->
+<script src="../components/style.menu/config/app.angularjs-color-picker.js"></script>
+<script src="../components/text.editor/config/app.text-angular.js"></script>
+<script src="../components/config/app.ui-notification.js"></script>
+
+<!-- services -->
+
+<!-- api services -->
+<script src="../services/api/block.service.js"></script>
+<script src="../services/api/element.service.js"></script>
+<script src="../services/api/menuItem.service.js"></script>
+<script src="../services/api/page.service.js"></script>
+<script src="../services/api/section.service.js"></script>
+<script src="../services/api/style.service.js"></script>
+<script src="../services/api/upload.service.js"></script>
+
+<!-- event services -->
+<script src="../services/event/event.default-template.js"></script>
+<script src="../services/event/event.menu-item.menu.js"></script>
+<script src="../services/event/event.section-menu.js"></script>
+
+<!-- resize -->
+<script src="../services/event/event.resize-window.js"></script>
+<script src="../components/resize-window/module.js"></script>
+<script src="../components/resize-window/resize.directive.js"></script>
+
+</body>
+</html>

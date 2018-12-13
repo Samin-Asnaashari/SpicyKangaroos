@@ -1,0 +1,35 @@
+<div class="container dashboard">
+
+    <div class="row well header">
+        <div class="col-xs-12">
+            <h1 class="text-left text-muted"><strong>Dashboard</strong></h1>
+        </div>
+    </div>
+
+    <div class="row well well-sm" style="border-radius: 0; background-color: transparent">
+        <div class="col-xs-12 button-create">
+            <md-button create-page-click parent-id="-1" aria-label="add page" class="pull-right">
+                <md-icon class="fa fa-plus-square-o fa-2x" aria-hidden="true" style="margin-bottom: 10px"></md-icon>
+            </md-button>
+        </div>
+        <div class="col-xs-12 liveMenuItems">
+            <h5 ng-if="vmDashboard.topMenuItems.length == 0"><i>No existing pages</i></h5>
+            <menu-item-collection top-menu-items='vmDashboard.topMenuItems'></menu-item-collection>
+        </div>
+    </div>
+
+    <div class="row well well-sm trash-section" style="border-radius: 0; background-color: transparent">
+        <div class="col-xs-12">
+            <md-button ng-click="vmDashboard.clearTrash()" class="pull-right" aria-label="clear trash"
+                       ng-if="vmDashboard.trashMenuItems.length != 0">
+                <md-icon class="fa fa-trash-o fa-2x" aria-hidden="true" style="margin-bottom: 10px"></md-icon>
+            </md-button>
+        </div>
+        <div class="col-xs-12 trashMenuItems">
+            <h4>Trash Pages</h4>
+            <h5 ng-if="vmDashboard.trashMenuItems.length == 0"><i>Empty</i></h5>
+            <trash-menu-item-collection trash-menu-items='vmDashboard.trashMenuItems'></trash-menu-item-collection>
+        </div>
+    </div>
+
+</div>

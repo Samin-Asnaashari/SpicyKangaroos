@@ -1,0 +1,54 @@
+<div class="section-menu">
+    <div class="section-setting">
+
+        <!-- style-menu-click directive -->
+        <md-button aria-label="open setting menu" md-colors="{background: 'grey-900-1'}"
+                   class="md-fab fade-show style-menu" style-menu-click section-style="vmSectionMenu.sectionStyle"
+                   style-show="vmSectionMenu.styleOptions">
+            <i class="fa fa-paint-brush"></i>
+        </md-button>
+
+        <!-- settings -->
+        <md-menu class="setting-menu-dropdown" md-position-mode="target-right target">
+            <md-button aria-label="open setting menu" md-colors="{background: 'grey-900-1'}" class="md-fab fade-show"
+                       ng-click="vmSectionMenu.openMenu($mdOpenMenu, $event)">
+                <span class="glyphicon glyphicon-wrench"></span>
+            </md-button>
+            <md-menu-content>
+                <md-menu-item>
+                    <md-button ng-click="vmSectionMenu.duplicateSection()">
+                        <md-icon md-font-set="fa fa-files-o"></md-icon>
+                        Duplicate
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vmSectionMenu.removeSection()">
+                        <md-icon md-font-set="fa fa-times"></md-icon>
+                        Remove
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+    </div>
+
+    <div class="btn-up-down">
+        <ul class="ul-buttons" style="list-style: none">
+            <li>
+                <md-button ng-click="vmSectionMenu.moveTheSectionUpOrDown('Up')"
+                           ng-disabled="!(vmSectionMenu.canMove.up)"
+                           aria-label="up" md-colors="{background: 'grey-900-1'}" class="button-move md-fab md-mini">
+                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                </md-button>
+            </li>
+            <li>
+                <md-button ng-click="vmSectionMenu.moveTheSectionUpOrDown('Down')"
+                           ng-disabled="!(vmSectionMenu.canMove.down)"
+                           aria-label="down" md-colors="{background: 'grey-900-1'}" class="button-move md-fab md-mini">
+                    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                </md-button>
+            </li>
+        </ul>
+    </div>
+
+</div>

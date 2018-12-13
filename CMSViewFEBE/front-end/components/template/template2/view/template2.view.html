@@ -1,0 +1,17 @@
+<div class="row template template-2 has-menu"
+     ng-style="{
+        'background-color': vmTemplate2View.row.style.backgroundColor,
+        'padding-top': (vmTemplate2View.defaultPadding + vmTemplate2View.row.style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate2View.defaultPadding + vmTemplate2View.row.style.paddingBottom) + 'px',
+        'background-image': !vmTemplate2View.row.style.backgroundImage ? 'none' : 'url(' + vmTemplate2View.row.style.backgroundImage + ')',
+        'height': vmTemplate2View.row.style.height + 'px',
+        'color': vmTemplate2View.row.style.textColor
+        }">
+
+    <!-- block -->
+    <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 block-text">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2">
+            <div ng-bind-html="vmTemplate2View.row.blocks[0].elements[0].content"></div>
+        </div>
+    </div>
+</div>

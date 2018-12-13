@@ -1,0 +1,6 @@
+/* col-xs */
+@media (max-width: 767px) {
+    .template-3 .block-text-right {
+        padding-top: 50px;
+    }
+}

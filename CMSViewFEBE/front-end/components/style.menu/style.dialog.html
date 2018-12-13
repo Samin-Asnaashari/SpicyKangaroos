@@ -1,0 +1,229 @@
+<md-dialog class="menu-dialog-section-setting" aria-label="styles menu">
+
+    <!-- ******************** dialog top options ******************** -->
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h1>Styling</h1>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="close dialog"
+                       ng-click="vmSectionStyle.closeDialog()">
+                <span class="glyphicon glyphicon-remove"></span>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <!-- ******************** dialog content ******************** -->
+    <md-dialog-content>
+        <div class="md-padding style-dialog">
+
+            <!-- ******************** PADDING ******************** -->
+            <div ng-if="vmSectionStyle.show[0]">
+                <div class="padding-section">
+                    <div flex>
+                        <md-content class="md-padding">
+                            <h3>Padding</h3>
+                        </md-content>
+                    </div>
+                    <div flex>
+                        <md-content>
+                            <div layout="row">
+                                <div flex>
+                                    <div class="md-padding">
+                                        <!-- content -->
+
+                                        <!-- top-padding -->
+                                        <div layout="column">
+                                            Top padding:
+                                            <md-input-container aria-label="top padding">
+                                                <md-select ng-model="vmSectionStyle.style.paddingTop"
+                                                           aria-label="top padding">
+                                                    <md-option ng-repeat="item in vmSectionStyle.paddingOptions"
+                                                               ng-value="item">
+                                                        {{item}}px
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                        </div>
+                                        <!-- bottom-padding -->
+                                        <div layout="column">
+                                            Bottom padding:
+                                            <md-input-container aria-label="bottom padding">
+                                                <md-select ng-model="vmSectionStyle.style.paddingBottom"
+                                                           aria-label="bottom padding">
+                                                    <md-option ng-repeat="item in vmSectionStyle.paddingOptions"
+                                                               ng-value="item">
+                                                        {{item}}px
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </md-content>
+                </div>
+            </div>
+
+
+            <!-- ******************** BACKGROUND COLOR ******************** -->
+            <div ng-if="vmSectionStyle.show[2]">
+                <div class="background-color-section">
+                    <div flex>
+                        <md-content class="md-padding">
+                            <h3>Background color</h3>
+                        </md-content>
+                    </div>
+                    <div flex>
+                        <md-content>
+                            <div layout="row">
+                                <div flex>
+                                    <div class="md-padding">
+                                        <!-- content -->
+
+                                        <color-picker ng-model="vmSectionStyle.style.backgroundColor">
+                                        </color-picker>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </md-content>
+                </div>
+            </div>
+
+            <!-- ******************** PREVIEW ******************** -->
+            <div ng-if="vmSectionStyle.show[1]">
+                <div class="background-color-section">
+                    <div flex>
+                        <md-content class="md-padding">
+                            <!--<h3>Preview</h3>-->
+                        </md-content>
+                    </div>
+                    <div flex>
+                        <md-content>
+                            <div layout="row">
+                                <div flex>
+                                    <div class="md-padding">
+                                        <!-- content -->
+
+                                        <div class="preview-container" layout="row"
+                                             layout-align="center center">
+                                            <div class="preview"
+                                                 ng-style="{'background-color': vmSectionStyle.style.backgroundColor,
+                                                            'color': vmSectionStyle.style.textColor}" flex>
+                                                <div flex>
+                                                    <h3 style="font-weight: bold">
+                                                        {{vmSectionStyle.dummyHeader}}</h3>
+                                                    <p>{{vmSectionStyle.dummyParagraph}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </md-content>
+                </div>
+            </div>
+
+            <!-- ******************** FONT COLOR ******************** -->
+            <div ng-if="vmSectionStyle.show[3]">
+                <div class="font-color-section">
+                    <div flex>
+                        <md-content class="md-padding">
+                            <h3>Font color</h3>
+                        </md-content>
+                    </div>
+                    <div flex>
+                        <md-content>
+                            <div layout="row">
+                                <div flex>
+                                    <div class="md-padding">
+                                        <!-- content -->
+
+                                        <color-picker ng-model="vmSectionStyle.style.textColor">
+                                        </color-picker>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </md-content>
+                </div>
+            </div>
+
+            <!-- ******************** BACKGROUND IMAGE ******************** -->
+            <div ng-if="vmSectionStyle.show[4]">
+                <div class="background-image-section">
+                    <div flex>
+                        <md-content>
+                            <div layout="row">
+                                <div flex>
+                                    <div class="md-padding">
+                                        <!-- content -->
+
+                                        <!-- upload button -->
+                                        <md-button class="md-raised md-primary"
+                                                   aria-label="upload file"
+                                                   type="file"
+                                                   ngf-select="vmSectionStyle.uploadFile($file, $invalidFiles)"
+                                                   accept="image/*">
+                                            Upload
+                                        </md-button>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </md-content>
+                </div>
+            </div>
+
+            <!-- ******************** Existing background images ******************** -->
+            <div ng-if="vmSectionStyle.show[4]">
+                <div class="background-images-section">
+                    <div flex>
+                        <md-content class="md-padding">
+                            <h3>Existing images</h3>
+                        </md-content>
+                    </div>
+                    <div flex>
+                        <md-content>
+                            <div layout="row">
+                                <div flex>
+                                    <div class="md-padding">
+                                        <!-- content -->
+
+                                        <div class="row form-group product-chooser">
+                                            <div class="col-xs-3 image-column" ng-repeat="item in vmSectionStyle.backgroundImages">
+                                                <div class="product-chooser-item"
+                                                ng-click="vmSectionStyle.chooseImage(item)">
+                                                    <img ng-src="{{item.path}}" class="img-thumbnail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </md-content>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </md-dialog-content>
+
+    <!-- ******************** dialog bottom actions ******************** -->
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-raised md-primary" ng-click="vmSectionStyle.saveChanges()">
+            Save
+        </md-button>
+        <md-button class="md-raised" ng-click="vmSectionStyle.revertChanges()">
+            Cancel
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

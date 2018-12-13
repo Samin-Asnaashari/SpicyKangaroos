@@ -1,0 +1,59 @@
+<div class="row template template-1 has-menu"
+     id="{{vmTemplate1.row.id}}"
+     ng-style="{
+        'background-color': vmTemplate1.row.style.backgroundColor,
+        'padding-top': (vmTemplate1.defaultPadding + vmTemplate1.row.style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate1.defaultPadding + vmTemplate1.row.style.paddingBottom) + 'px',
+        'background-image': !vmTemplate1.row.style.backgroundImage ? 'none' : 'url(' + vmTemplate1.row.style.backgroundImage + ')',
+        'height': vmTemplate1.row.style.height + 'px',
+        'color': vmTemplate1.row.style.textColor,
+        }"
+     ng-mouseover="vmTemplate1.hover = true"
+     ng-mouseleave="vmTemplate1.hover = false">
+
+    <!-- block -->
+    <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 block-text has-menu template-block"
+         ng-style="{
+        'background-color': vmTemplate1.row.blocks[0].style.backgroundColor,
+        'padding-top': (vmTemplate1.defaultPadding + vmTemplate1.row.blocks[0].style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate1.defaultPadding + vmTemplate1.row.blocks[0].style.paddingBottom) + 'px',
+        'background-image': !vmTemplate1.row.blocks[0].style.backgroundImage ? 'none' : 'url(' + vmTemplate1.row.blocks[0].style.backgroundImage + ')',
+
+        'color': vmTemplate1.row.blocks[0].style.textColor
+        }"
+         ng-mouseover="vmTemplate1.hoverBlock = true"
+         ng-mouseleave="vmTemplate1.hoverBlock = false">
+
+        <!-- text-editor -->
+        <text-editor element="vmTemplate1.row.blocks[0].elements[0]"></text-editor>
+
+        <!-- style-menu-click directive -->
+        <md-button aria-label="open setting menu" md-colors="{background: 'grey-900-1'}"
+                   class="md-fab fade-show style-menu"
+                   ng-show="vmTemplate1.hoverBlock"
+                   style-menu-click section-style="vmTemplate1.row.blocks[0].style"
+                   style-show="vmTemplate1.styleOptionsBlock">
+            <i class="fa fa-paint-brush"></i>
+        </md-button>
+    </div>
+
+    <!-- section-menu -->
+    <section-menu ng-show="vmTemplate1.hover" class="fade-show" can-move="vmTemplate1.canMove"
+                  section-style="vmTemplate1.row.style"
+                  section-id="{{vmTemplate1.row.id}}"
+                  style-show="vmTemplate1.styleOptions"></section-menu>
+
+    <!-- uses the same ng-style as the row template -->
+    <!-- add-template directive -->
+    <div class="col-xs-12 template-add text-center"
+         ng-mouseover="vmTemplate1.add = true"
+         ng-mouseleave="vmTemplate1.add = false">
+        <add-template ng-show="vmTemplate1.add && !vmTemplate1.showDefaultTemplate"
+                      section-id="{{vmTemplate1.row.id}}"></add-template>
+    </div>
+</div>
+
+<!-- default template -->
+<template-default ng-if="vmTemplate1.showDefaultTemplate"
+                  sequence="{{vmTemplate1.row.sequence}}"
+                  row-id="{{vmTemplate1.row.id}}"></template-default>

@@ -1,0 +1,17 @@
+<md-dialog class="menu-dialog-section-setting" flex="50">
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <h4>Are you sure you want to delete the page?</h4>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <md-button ng-click="vmConfirmDelete.cancel()">
+            cancel
+        </md-button>
+        <md-button ng-click="vmConfirmDelete.deletePageWithUpdateSequence()">
+            yes
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>
+

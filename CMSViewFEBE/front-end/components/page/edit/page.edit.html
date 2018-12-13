@@ -1,0 +1,35 @@
+<div class="container-fluid" resize-window>
+
+    <!-- add.template.button top -->
+    <div class="row page-add-template" ng-show="vmPage.page.rows.length > 0">
+        <div class="col-xs-12 template-add text-center"
+             ng-mouseover="vmPage.add = true"
+             ng-mouseleave="vmPage.add = false">
+            <add-template ng-show="vmPage.add && !vmPage.showDefaultTemplate" section-id="0"></add-template>
+        </div>
+    </div>
+
+    <!-- default template top (+) -->
+    <template-default ng-if="vmPage.showDefaultTemplate"
+                      sequence="0"
+                      row-id="0">
+    </template-default>
+
+    <div ng-If="vmPage.page.rows.length == 0">
+        <template-default sequence="0" first-template="true"></template-default>
+    </div>
+
+    <div ng-repeat="row in vmPage.page.rows">
+        <div ng-switch="row.identifier">
+            <div ng-switch-when="template-1">
+                <template1 can-move="vmPage.checkCanMove($index)" row="row"></template1>
+            </div>
+            <div ng-switch-when="template-2">
+                <template2 can-move="vmPage.checkCanMove($index)" row="row"></template2>
+            </div>
+            <div ng-switch-when="template-3">
+                <template3 can-move="vmPage.checkCanMove($index)" row="row"></template3>
+            </div>
+        </div>
+    </div>
+</div>

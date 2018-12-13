@@ -1,0 +1,41 @@
+<div>
+    <md-menu md-position-mode="target-right target">
+        <md-button aria-label="Open edit menu" class="pull-right"
+                   ng-click="vmMenuItemMenu.openMenu($mdOpenMenu, $event)" style="background-color: transparent">
+                <md-icon class="fa fa-cog fa-2x" aria-hidden="true"></md-icon>
+                <md-icon class="fa fa-caret-down" aria-hidden="true" style="padding-top: 6px"></md-icon>
+        </md-button>
+        <md-menu-content width="3">
+            <!--<md-menu-item ng-show="!menuItem.draft">-->
+                <!--<md-button ng-click="vmMenuItemMenu.changeDraftStatus(menuItem)">-->
+                    <!--<md-icon class="fa fa-eye-slash fa-2x" aria-hidden="true"></md-icon>-->
+                    <!--Move To Draft Page-->
+                <!--</md-button>-->
+            <!--</md-menu-item>-->
+            <md-menu-item>
+                <md-button ng-click="form.$show()">
+                    <md-icon class="fa fa-pencil fa-2x" aria-hidden="true"></md-icon>
+                    Rename Page
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="vmMenuItemMenu.gotToEditPage(menuItem.id)">
+                    <md-icon class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></md-icon>
+                    Edit Page
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="!(menuItem.level >= vmMenuItemMenu.maxLevel)">
+                <md-button create-page-click parent-id="menuItem.id">
+                    <md-icon class="fa fa-plus fa-2x" aria-hidden="true"></md-icon>
+                    Add Sub-Page
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="vmMenuItemMenu.showDeletePageConfirmationDialog(menuItem)">
+                    <md-icon class="fa fa-trash-o fa-2x" aria-hidden="true"></md-icon>
+                    Delete Page
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

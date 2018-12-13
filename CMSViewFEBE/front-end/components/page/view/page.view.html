@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div ng-repeat="row in vmPageView.page.rows">
+        <div ng-if="row.identifier == 'template-1'">
+            <template1-view row="row"></template1-view>
+        </div>
+        <div ng-if="row.identifier == 'template-2'">
+            <template2-view row="row"></template2-view>
+        </div>
+        <div ng-if="row.identifier == 'template-3'">
+            <template3-view row="row"></template3-view>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+<div class="row template template-3 has-menu"
+     ng-style="{
+        'background-color': vmTemplate3.row.style.backgroundColor,
+        'padding-top': (vmTemplate3.defaultPadding + vmTemplate3.row.style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate3.defaultPadding + vmTemplate3.row.style.paddingBottom) + 'px',
+        'background-image': !vmTemplate3.row.style.backgroundImage ? 'none' : 'url(' + vmTemplate3.row.style.backgroundImage + ')',
+        'height': vmTemplate3.row.style.height + 'px',
+        'color': vmTemplate3.row.style.textColor
+        }"
+     ng-mouseover="vmTemplate3.hover = true"
+     ng-mouseleave="vmTemplate3.hover = false">
+
+    <div class="col-sm-8 col-sm-offset-2">
+        <!-- block -->
+        <div class="col-sm-6 block-text-left">
+            <!-- text-editor -->
+            <text-editor element="vmTemplate3.getElement('block-text-left')"></text-editor>
+        </div>
+        <!-- block -->
+        <div class="col-sm-6 block-text-right">
+            <!-- text-editor -->
+            <text-editor element="vmTemplate3.getElement('block-text-right')"></text-editor>
+        </div>
+    </div>
+
+    <!-- section-menu -->
+    <section-menu ng-show="vmTemplate3.hover" class="fade-show" can-move="vmTemplate3.canMove"
+                  section-style="vmTemplate3.row.style"
+                  section-id="{{vmTemplate3.row.id}}"
+                  style-show="vmTemplate3.styleOptions"></section-menu>
+
+    <!-- uses the same ng-style as the row template -->
+    <!-- add-template directive -->
+    <div class="col-xs-12 template-add text-center"
+         ng-mouseover="vmTemplate3.add = true"
+         ng-mouseleave="vmTemplate3.add = false">
+        <add-template ng-show="vmTemplate3.add && !vmTemplate3.showDefaultTemplate"
+                      section-id="{{vmTemplate3.row.id}}"></add-template>
+    </div>
+</div>
+
+<!-- default template -->
+<template-default ng-if="vmTemplate3.showDefaultTemplate"
+                  sequence="{{vmTemplate3.row.sequence}}"
+                  row-id="{{vmTemplate3.row.id}}"></template-default>

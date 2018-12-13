@@ -1,0 +1,12 @@
+<md-dialog class="template-zoom-image-dialog" aria-label="zoom image" flex="60">
+    <!-- ******************** dialog content ******************** -->
+    <md-dialog-content>
+        <md-button class="md-icon-button pull-right" aria-label="close dialog"
+                   ng-click="vmTemplateImageZoom.closeDialog()">
+            <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+        </md-button>
+        <div class="md-padding" align="center">
+            <img ng-src="{{vmTemplateImageZoom.image}}" class="img-responsive img-thumbnail">
+        </div>
+    </md-dialog-content>
+</md-dialog>

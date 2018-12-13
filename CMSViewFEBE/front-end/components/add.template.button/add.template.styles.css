@@ -1,0 +1,29 @@
+.template-add {
+    z-index: 2;
+    position: absolute;
+    height: 56px; /* 56x56 is button */
+    outline: none;
+    bottom: -2em;
+}
+
+.template-add .template-add-column {
+    cursor: pointer;
+}
+
+.template-add .template-add-column .button-plus {
+    font-size: 4em;
+}
+
+.template-add .template-add-column .line {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    right: 0;
+    left: 0;
+    top: 28px; /* 56x56 is button */
+}
+
+/* on the page - row (first row) */
+.page-add-template {
+    position: relative;
+}

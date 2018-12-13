@@ -1,0 +1,29 @@
+.template-1 {
+    /* Center children in this class*/
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+    /* image cannot exceed */
+    max-height: 75vh;
+}
+
+/* col-xs */
+@media (max-width: 767px) {
+    .template-1 {
+        /* Un-Center children in this class*/
+        display: block;
+        max-height: 100vh;
+    }
+
+    /* Block stuck to bottom */
+    .template-1 .block-text {
+        position: absolute !important; /* override has-menu class */
+        bottom: 0;
+        right: 0;
+    }
+}

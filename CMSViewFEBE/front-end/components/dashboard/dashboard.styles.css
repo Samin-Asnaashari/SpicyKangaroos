@@ -1,0 +1,175 @@
+/**********************/
+/* button create page */
+/**********************/
+.dashboard .button-create {
+    padding-bottom: 50px;
+}
+
+/*******************/
+/* live menu items */
+/*******************/
+
+.dashboard .liveMenuItems .draftStyle {
+    color: #531c00;
+}
+
+.dashboard .liveMenuItems .liveStyle {
+    /*color: #003506;*/
+    /*color: #000;*/
+}
+
+/*******************/
+/* bar             */
+/*******************/
+md-switch .md-bar {
+    /*set not selected bar color */
+    background-color: grey;
+}
+
+md-switch.md-checked .md-bar {
+    /* set selected bar color */
+    background-color: seagreen;
+}
+
+md-switch[disabled] .md-bar {
+    /* set disabled bar color */
+}
+
+/*******************/
+/* switch          */
+/*******************/
+md-switch .md-thumb {
+    /* not selected switch color */
+    color: grey;
+}
+
+md-switch.md-checked .md-thumb {
+    /* selected switch color */
+    background-color: green;
+}
+
+md-switch[disabled] .md-thumb {
+    /* disabled switch color */
+}
+
+.dashboard .liveMenuItems .publish {
+    color: #003506;
+}
+
+.dashboard .liveMenuItems .unPublish {
+    color: #531c00;
+}
+
+.dashboard .liveMenuItems .menu-container, .gu-unselectable .menu-container {
+    padding: 0 0 0 0;
+    margin-left: 10px;
+}
+
+/* gu-unselectable is needed to have the style for when it's dragging. */
+.top-container .top-menu-item .menu, .gu-unselectable .menu,
+.top-container .top-menu-item .sub-menu, .gu-unselectable .sub-menu {
+    /* container (well) styles */
+    background-color: rgba(0, 53, 98, 0.5);
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+
+    /* enter children in this class */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+    /* font styles */
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.dashboard .top-container .top-menu-item .sub-menu {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* override background color for top menu */
+.dashboard .top-container .top-menu-item .menu {
+    background-color: #cfcfcf;
+}
+
+/* override background color for sub menu */
+.dashboard .top-container .top-menu-item .sub-menu {
+    background-color: #e3e3e3;
+}
+
+.dashboard .top-container .row-handle,
+.dashboard .top-container .child-handle {
+    cursor: move;
+}
+
+/* nested container where the children are */
+.dashboard .top-menu .nested-container,
+.gu-unselectable .nested-container {
+    padding-left: 45px;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.dashboard .top-menu .nested-container .menu-child {
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+/********************/
+/* trash menu items */
+/********************/
+
+.dashboard .trashMenuItems .trash-menu-container {
+    padding: 0 0 0 0;
+    margin-left: 10px;
+}
+
+.trashMenuItems .trash-menu, .trashMenuItems .trash-sub-menu {
+    /* container (well) styles */
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+
+    /* enter children in this class */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+    /* font styles */
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.trashMenuItems .trash-top-menu-item .trash-sub-menu {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* override background color for top menu */
+.trashMenuItems .trash-top-menu-item .trash-menu {
+    background-color: #cfcfcf;
+}
+
+/* override background color for sub menu */
+.trashMenuItems .trash-top-menu-item .trash-sub-menu {
+    background-color: #e3e3e3;
+}
+
+/* nested container where the children are */
+.trashMenuItems .trash-nested-container {
+    padding-left: 45px;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+}

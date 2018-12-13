@@ -1,0 +1,86 @@
+<nav class="navbar view-navigation navbar-fixed-top">
+
+    <div class="mobile-view visible-xs hidden-sm">
+        <!-- logo mobile show, desktop hide -->
+        <div class="navbar-header navbar-logo xs-logo">
+            <img class="logo-header-image" ng-click="vmNavView.logoSelect(); vmNavView.xsNavOpen = false;"
+                 src="../asset/img/gameHouseLogo.png" height="22" width="120"/>
+        </div>
+
+        <!-- 3-dots menu mobile - boolean to open/close menu -->
+        <div class="dots-menu-container" ng-click="vmNavView.xsNavOpen = !vmNavView.xsNavOpen">
+            <div class="dots-menu"></div>
+        </div>
+
+        <!-- navigation - mobile show, desktop hide -->
+        <div class="menu-mobile-full" ng-show="vmNavView.xsNavOpen">
+            <uib-accordion close-others="true" ng-repeat="menu in vmNavView.navigation">
+                <div uib-accordion-group class="menu-panel" is-open="vmNavView.menuOpen[$index]" is-disabled="true"
+                     ng-style="(vmNavView.menuOpen[$index] && menu.children.length > 0 ) ?
+        { 'border-bottom' : 'none' } : { 'border-bottom' : '1px solid #767676' }">
+                    <!-- menu -->
+                    <uib-accordion-heading>
+                <span class="m-menu-item" ng-click="vmNavView.menuSelect(menu); vmNavView.xsNavOpen = false;"
+                      ng-class="vmNavView.activeMenuId == menu.id ? 'active' : ''">{{menu.name}}</span>
+                        <span class="pull-right glyphicon open-close-menu" style="outline: none;"
+                              ng-click="vmNavView.menuOpen[$index] = !vmNavView.menuOpen[$index]"
+                              ng-if="menu.children.length > 0"
+                              ng-class="vmNavView.menuOpen[$index] ? 'glyphicon glyphicon-minus' : 'glyphicon glyphicon-plus'"></span>
+                    </uib-accordion-heading>
+
+                    <!-- sub-menu -->
+                    <uib-accordion close-others="false" ng-show="menu.children.length > 0"
+                                   ng-repeat="subMenu in menu.children">
+                        <div uib-accordion-group class="sub-menu-panel" is-open="false" is-disabled="true">
+                            <uib-accordion-heading>
+                        <span class="m-menu-item" ng-click="vmNavView.menuSelect(subMenu) ; vmNavView.xsNavOpen = false;"
+                              ng-class="vmNavView.activeMenuId == subMenu.id ? 'active' : ''">{{subMenu.name}}</span>
+                            </uib-accordion-heading>
+                        </div>
+                    </uib-accordion>
+                </div>
+            </uib-accordion>
+        </div>
+    </div>
+
+    <div class="none-mobile-view hidden-xs">
+        <!-- logo mobile hide, desktop show -->
+        <div class="navbar-header navbar-logo">
+            <img class="logo-header-image center-block" ng-click="vmNavView.logoSelect()"
+                 src="../asset/img/gameHouseLogo.png" height="22" width="120"/>
+        </div>
+
+        <!-- navigation menu desktop, mobile hide -->
+        <div class="container-fluid nav-container">
+            <!-- an isolated ul for each menu-item -->
+            <ul class="nav navbar-nav menu-items" uib-dropdown is-open="menuOpen"
+                ng-repeat="menu in vmNavView.navigation"
+                ng-mouseenter="menuOpen = true"
+                ng-mouseleave="menuOpen = false">
+
+                <li class="li-item active" ng-click="vmNavView.menuSelect(menu)">
+                    <a>
+                        <span class="span-top-menu"
+                              ng-class="menuOpen || vmNavView.activeMenuId == menu.id ? 'active' : ''">
+                            {{menu.name}}
+
+                            <!-- span arrow - show only if menu has submenu's (children) -->
+                            <span ng-if="menu.children.length > 0" class="glyphicon glyphicon-triangle-bottom top-menu-arrow"></span>
+                        </span>
+                    </a>
+                </li>
+
+                <!-- show only if menu has submenu's (children) -->
+                <ul ng-show="menu.children.length > 0" class="dropdown-menu item-dropdown" role="menu">
+                    <li role="menuitem" ng-repeat="subMenu in menu.children">
+                        <a class="child-item">
+                            <!-- click - select menu -->
+                            <div class="child-menu" ng-click="vmNavView.menuSelect(subMenu)"
+                                 ng-class="vmNavView.activeMenuId == subMenu.id ? 'active' : ''">{{subMenu.name}}</div>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>

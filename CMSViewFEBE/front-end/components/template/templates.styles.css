@@ -1,0 +1,79 @@
+.template.has-menu, .template .has-menu {
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    position: relative;
+}
+
+.template h1, .template h2, .template h3, .template h4, .template h5, .template h6, .template p {
+    margin: 0;
+}
+
+/* position setting menu top-right of a section (not part of template, but part of the section-menu */
+.template .section-menu .section-setting, .template .template-block .style-menu {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+}
+
+/* position up-down button at the bottom of the templates */
+.template .section-menu .btn-up-down {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+}
+
+.template .section-menu .btn-up-down .ul-buttons {
+    list-style-type: none;
+}
+
+.template .section-menu .btn-up-down .ul-buttons li {
+    padding-top: 5px;
+}
+
+.template {
+    font-family: 'Source Sans Pro', "Arial Black", serif;
+}
+
+.template a {
+    color: #019ec0;
+    text-decoration: none;
+}
+
+.template p {
+    font-size: 18px;
+}
+
+.template h1 {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.template h2 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.template h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.template ul {
+    font-size: 18px;
+    list-style-image: url('../../asset/img/bulletpoint orange small.png');
+}
+
+/* col-xs */
+@media (max-width: 767px) {
+    .template.has-menu {
+        background: center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}

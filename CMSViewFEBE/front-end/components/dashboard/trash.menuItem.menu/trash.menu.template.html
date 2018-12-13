@@ -1,0 +1,23 @@
+<div>
+    <md-menu md-position-mode="target-right target">
+        <md-button aria-label="Open edit menu" class="pull-right"
+                   ng-click="vmTrashMenu.openMenu($mdOpenMenu, $event)" style="background-color: transparent">
+            <md-icon class="fa fa-cog fa-2x" aria-hidden="true"></md-icon>
+            <md-icon class="fa fa-caret-down" aria-hidden="true" style="padding-top: 6px"></md-icon>
+        </md-button>
+        <md-menu-content width="2">
+            <md-menu-item>
+                <md-button ng-click="vmTrashMenu.restoreFromTrash(menuItem)">
+                    <md-icon class="fa fa-repeat fa-2x" aria-hidden="true"></md-icon>
+                    Restore Page
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="vmTrashMenu.deleteForever(menuItem)">
+                    <md-icon class="fa fa-ban fa-2x" aria-hidden="true"></md-icon>
+                    Delete Page
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

@@ -1,0 +1,90 @@
+<div id="parent-container" class="top-container"> <!--container-->
+    <div ng-repeat="topMenuItem in topMenuItems" class="top-menu-item"> <!-- parentContainers -->
+        <div class="row top-menu">
+
+            <!-- parent structure -->
+            <!-- well - is being dragged -->
+            <div class="col-xs-12 well well-sm menu">
+                <div class="row-handle fa fa-square">
+                </div>
+                <div class="col-xs-9" ng-class="{draftStyle: topMenuItem.draft, liveStyle: !(topMenuItem.draft)}">
+                    <form editable-form name="topMenuEditableForm" onaftersave="vmMenuItem.reNamePage(topMenuItem)">
+                        <div>
+                                <span editable-text="topMenuItem.name" e-required>
+                                    <!--<a class="go-to-edit-page-link"
+                                    ng-click="vmMenuItem.gotToEditPage(topMenuItem.id)"> {{topMenuItem.name || 'empty'}} </a>-->
+                                    {{topMenuItem.name || 'empty'}}
+                                    <small ng-show="topMenuItem.draft"><sup>Draft</sup></small>
+                                </span>
+                            <span ng-show="topMenuEditableForm.$visible">
+                                    <button type="submit" class="btn btn-primary"
+                                            ng-disabled="topMenuEditableForm.$waiting">
+                                        Save
+                                    </button>
+                                    <button type="button" class="btn btn-default"
+                                            ng-click="topMenuEditableForm.$cancel()"
+                                            ng-disabled="topMenuEditableForm.$waiting">
+                                        Cancel
+                                    </button>
+                                </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-2" style="padding: 0">
+                    <div class="pull-right">
+                        <md-switch ng-model="topMenuItem.draft" aria-label="draft-status-switch"
+                                   ng-true-value="false" ng-false-value="true"
+                                   style="margin-bottom: inherit;margin-top: inherit;"
+                                   ng-change="vmMenuItem.changeDraftStatus(topMenuItem,topMenuItem.draft)"></md-switch>
+                    </div>
+                </div>
+                <div class="col-xs-1 menu-container">
+                    <menu-item-menu menu-item="topMenuItem" form="topMenuEditableForm"></menu-item-menu>
+                </div>
+            </div>
+
+            <!-- child structure -->
+            <div class="col-xs-12 nested-container">
+                <div ng-repeat="child in topMenuItem.children" class="menu-child row">
+                    <!-- well - is being dragged -->
+                    <div class="col-xs-12 well well-sm sub-menu">
+                        <div class="child-handle fa fa-square">
+                        </div>
+                        <div class="col-xs-9" ng-class="{draftStyle: child.draft, liveStyle: !(child.draft)}">
+                            <form editable-form name="childMenuEditableForm"
+                                  onaftersave="vmMenuItem.reNamePage(child)">
+                                        <span editable-text="child.name" e-required>
+                                            {{child.name || 'empty'}}
+                                            <small ng-show="child.draft"><sup>Draft</sup></small>
+                                        </span>
+                                <span ng-show="childMenuEditableForm.$visible">
+                                            <button type="submit" class="btn btn-primary"
+                                                    ng-disabled="childMenuEditableForm.$waiting">
+                                                Save
+                                            </button>
+                                            <button type="button" class="btn btn-default"
+                                                    ng-click="childMenuEditableForm.$cancel()"
+                                                    ng-disabled="childMenuEditableForm.$waiting">
+                                                Cancel
+                                            </button>
+                                        </span>
+                            </form>
+                        </div>
+                        <div class="col-xs-2" style="padding: 0 0 0 0">
+                            <div class="pull-right">
+                                <md-switch ng-model="child.draft"
+                                           style="margin-bottom: inherit;margin-top: inherit;padding-right: 0"
+                                           ng-true-value="false" ng-false-value="true"
+                                           aria-label="draft-status-switch"
+                                           ng-change="vmMenuItem.changeDraftStatus(child,child.draft)"></md-switch>
+                            </div>
+                        </div>
+                        <div class="col-xs-1 menu-container">
+                            <menu-item-menu menu-item="child" form="childMenuEditableForm"></menu-item-menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="row template template-1 has-menu"
+     ng-style="{
+        'background-color': vmTemplate1View.row.style.backgroundColor,
+        'padding-top': (vmTemplate1View.defaultPadding + vmTemplate1View.row.style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate1View.defaultPadding + vmTemplate1View.row.style.paddingBottom) + 'px',
+        'background-image': !vmTemplate1View.row.style.backgroundImage ? 'none' : 'url(' + vmTemplate1View.row.style.backgroundImage + ')',
+        'height': vmTemplate1View.row.style.height + 'px',
+        'color': vmTemplate1View.row.style.textColor,
+        }">
+
+    <!-- block -->
+    <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 block-text has-menu template-block"
+         ng-style="{
+        'background-color': vmTemplate1View.row.blocks[0].style.backgroundColor,
+        'padding-top': (vmTemplate1View.defaultPadding + vmTemplate1View.row.blocks[0].style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate1View.defaultPadding + vmTemplate1View.row.blocks[0].style.paddingBottom) + 'px',
+        'background-image': !vmTemplate1View.row.blocks[0].style.backgroundImage ? 'none' : 'url(' + vmTemplate1View.row.blocks[0].style.backgroundImage + ')',
+
+        'color': vmTemplate1View.row.blocks[0].style.textColor
+        }">
+
+        <div ng-bind-html="vmTemplate1View.row.blocks[0].elements[0].content"></div>
+
+    </div>
+</div>

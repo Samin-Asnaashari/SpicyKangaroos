@@ -1,0 +1,21 @@
+<div class="row template template-3 has-menu"
+     ng-style="{
+        'background-color': vmTemplate3View.row.style.backgroundColor,
+        'padding-top': (vmTemplate3View.defaultPadding + vmTemplate3View.row.style.paddingTop) + 'px',
+        'padding-bottom': (vmTemplate3View.defaultPadding + vmTemplate3View.row.style.paddingBottom) + 'px',
+        'background-image': !vmTemplate3View.row.style.backgroundImage ? 'none' : 'url(' + vmTemplate3View.row.style.backgroundImage + ')',
+        'height': vmTemplate3View.row.style.height + 'px',
+        'color': vmTemplate3View.row.style.textColor
+        }">
+
+    <div class="col-sm-8 col-sm-offset-2">
+        <!-- block -->
+        <div class="col-sm-6 block-text-left">
+            <div ng-bind-html="vmTemplate3View.getElement('block-text-left')"></div>
+        </div>
+        <!-- block -->
+        <div class="col-sm-6 block-text-right">
+            <div  ng-bind-html="vmTemplate3View.getElement('block-text-right')"></div>
+        </div>
+    </div>
+</div>

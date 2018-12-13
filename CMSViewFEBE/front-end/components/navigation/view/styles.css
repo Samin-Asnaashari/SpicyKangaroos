@@ -1,0 +1,233 @@
+/* fix scrolling on body if menu is open */
+html, body {
+    /*height: 100%;*/
+    /*overflow: auto;*/
+}
+
+/* background navigation */
+.view-navigation, .view-navigation .nav-container .menu-items .item-dropdown {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.view-navigation .navbar-logo .logo-header-image {
+    cursor: pointer;
+    outline: none;
+}
+
+.view-navigation .xs-logo .logo-header-image {
+    display:block;
+    margin:auto;
+    text-align:center;
+}
+
+/* navigation */
+.view-navigation {
+    border-radius: 0;
+    font-family: 'Source Sans Pro', "Arial Black", serif;
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+.view-navigation .navbar-logo {
+    /* center logo */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* mobile-button */
+.view-navigation .mobile-view .dots-menu-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+    z-index: 10;
+    /* for thick fingers... */
+    padding-left: 25px;
+
+    /* center dots-menu */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* drawing the 3 dots */
+.view-navigation .dots-menu-container .dots-menu:after {
+    content: '\2807';
+    font-size: 2em;
+    color: #767676;
+    outline: none;
+}
+
+/**********************/
+/* mobile menu styles */
+/**********************/
+
+.menu-mobile-full {
+    z-index: 10; /* make sure it's big enough to be on top of everything */
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFFFF;
+    border-top: 2px solid #767676;
+    overflow-y: auto;
+}
+
+.menu-mobile-full .panel-group {
+    color: #767676;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu-mobile-full .panel-group .panel {
+    background-color: #FFFFFF;
+    border-radius: 0;
+}
+
+.menu-mobile-full .panel-group .panel a:focus, .menu-mobile-full .panel-group .panel a:hover {
+    text-decoration: none;
+}
+
+.menu-mobile-full .menu-panel {
+    outline: none;
+}
+
+.menu-mobile-full .panel-group .menu-panel .panel-body {
+    padding: 0;
+    border: 0;
+}
+
+.menu-mobile-full .panel-group .menu-panel, .menu-mobile-full .panel-group .menu-panel .sub-menu-panel {
+    border: 0;
+}
+
+.menu-mobile-full .panel-group .menu-panel .sub-menu-panel .panel-heading {
+    margin-left: 5px;
+}
+
+.menu-mobile-full .panel-group .menu-panel .sub-menu-panel a {
+    outline: none;
+}
+
+.menu-mobile-full .panel-group .menu-panel .sub-menu-panel {
+    background-color: #767676;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+/* make +/- icon 'bigger' to touch */
+.menu-mobile-full .menu-panel .open-close-menu {
+    padding-left: 20px;
+}
+
+.menu-mobile-full .panel-group .menu-panel .panel-body .panel-group .text-muted {
+    color: #FFFFFF;
+}
+
+.menu-mobile-full .m-menu-item {
+    outline: none;
+}
+
+.menu-mobile-full .m-menu-item.active {
+    color: #006f8b;
+}
+
+.menu-mobile-full .panel-group .menu-panel .panel-title .accordion-toggle {
+    outline: none;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .view-navigation .nav-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* navigation logo */
+    .view-navigation .navbar-logo {
+        margin-left: 50px;
+        margin-right: 100px;
+    }
+
+    .view-navigation .nav-container .menu-items .li-item {
+        cursor: pointer;
+        outline: none;
+    }
+
+    .view-navigation .nav-container .menu-items .span-top-menu {
+        padding-bottom: 5px;
+    }
+
+    .view-navigation .nav-container .menu-items a:hover .span-top-menu {
+        border-bottom: 1px solid;
+    }
+
+    .view-navigation .nav-container .menu-items .span-top-menu .top-menu-arrow {
+        margin-left: 8px;
+    }
+
+    .view-navigation .nav-container .menu-items a {
+        background-color: transparent;
+        color: #323232;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .view-navigation .nav-container .menu-items .li-item a:hover {
+        /*background-color: transparent;*/
+        /*color: #006f8b;*/
+    }
+
+    .view-navigation .nav-container .menu-items .li-item .active {
+        border-bottom: 1px solid;
+        color: #006f8b;
+    }
+
+    .view-navigation .nav-container .menu-items .child-item .active {
+        color: #006f8b;
+    }
+
+    .view-navigation .nav-container .menu-items .item-dropdown {
+        border-radius: 0;
+        border: 0;
+        top: calc(100% - 1px);
+        margin-top: 1px;
+    }
+
+    .view-navigation .nav-container .menu-items .item-dropdown .child-item {
+        cursor: default;
+    }
+
+    .view-navigation .nav-container .menu-items .item-dropdown .child-menu {
+        outline: none;
+        cursor: pointer;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .view-navigation .nav-container .menu-items .item-dropdown .child-menu:hover {
+        color: #FFFFFF;
+        background-color: #767676;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
